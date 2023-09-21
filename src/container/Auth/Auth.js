@@ -51,7 +51,7 @@ function Auth(props) {
                     {
                          type === 'login' ? <span>Forget Password:<a href='#' onClick={() => setType('forget')}>Forget</a></span> : null
                     }
-
+                    <h1>button</h1>
                 </div>
             </section>
         </main>
