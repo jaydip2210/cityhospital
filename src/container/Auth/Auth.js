@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import Button from '../../components/Ui/Button/Button';
+
 
 function Auth(props) {
     const [type, setType] = useState('login');
-    const [password, setPassword] = useState('forget');
+    // const [password, setPassword] = useState('forget');
 
     return (
         <main>
@@ -10,51 +12,44 @@ function Auth(props) {
                 <div className="container">
                     <div className="section-title">
                         {
-                            type === 'login' ? <h2>Login</h2> : <h2>SignUp</h2>
-                        }
-
-                        {
-                            password === 'forget' ? null : <h2>Forget password</h2>
+                            type === 'login' ? <h2>Login</h2> : type === 'signUp' ? <h2>SignUp</h2> : <h2>Forget password</h2>
                         }
                         {/* <h2>Login / SignUp</h2> */}
                     </div>
                     <form action method="post" role="form" className="php-email-form">
                         <div className="row justify-content-center">
-                            <div className="col-md-8 form-group">
-                                {
-                                    type === 'login' ? null : <input type="text" name="name" className="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                                }
-                            </div>
+                            {
+                                type === 'signUp' ? <div className="col-md-8 form-group">
+                                    <input type="text" name="name" className="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                                </div> : null
+                            }
                             <div className="col-md-8 form-group mt-3 mt-md-0">
                                 <input type="email" className="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
                             </div>
-                            <div className="col-md-8 form-group mt-3 mt-md-0">
-                                {
-                                    password === 'forget' ? <input type="tel" className="form-control" name="phone" id="phone" placeholder="Your Phone" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                                        :
-                                        null
-                                }
 
-                            </div>
+                            {
+                                type === 'login' || type === "signUp" ? <div className="col-md-8 form-group mt-3 mt-md-0">
+                                    <input type="tel" className="form-control" name="password" id="phone" placeholder="Your password" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                                </div> : null
+                            }
                         </div>
                         <div className="text-center">
                             {
-                                type === 'login' ? <button type="submit">Login</button> : <button type="submit">SignUp</button>
+                                type === 'login' ? <Button type="submit">Login1</Button> : 
+                                type === 'signUp' ? <Button btnType="Secondary" type="submit">SignUp</Button> :
+                                    <Button btnType="Outline" type="submit">submit</Button>     
                             }
-
                         </div>
                     </form>
 
                     {
-                        type === 'login' ? <span>Create an Account:<button onClick={() => setType()}>SignUp</button></span>
+                        type === 'login' ? <span>Create an Account:<a href='#' onClick={() => setType('signUp')}>SignUp</a></span>
                             :
-                            <span>Already have an Account:<button onClick={() => setType('login')}>Login</button></span>
+                            <span>Already have an Account:<a href='#' onClick={() => setType('login')}>Login</a></span>
                     }
                     <br></br>
                     {
-                        password === 'forget' ? <span>Forget password:<button onClick={() => setPassword()}>password</button></span>
-                            :
-                            null
+                         type === 'login' ? <span>Forget Password:<a href='#' onClick={() => setType('forget')}>Forget</a></span> : null
                     }
 
                 </div>

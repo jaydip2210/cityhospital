@@ -11,7 +11,6 @@ import Contact from './container/Contact/Contact';
 import Appointment from './container/Appointment/Appointment';
 import Auth from './container/Auth/Auth';
 
-
 function App() {
   return (
     <>
