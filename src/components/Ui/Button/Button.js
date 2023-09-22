@@ -1,27 +1,30 @@
 import React from 'react';
 import { Basebutton } from './Button.style';
+import { PrimaryButton } from './Button.style';
+import { SecondaryButton } from './Button.style';
+import { OutlineButton } from './Button.style';
 
-function Button({children, ...rest}) {
-    console.log(rest);
+function Button({children, btnType="Primary", btnDisabled=false, ...rest}) {
+    console.log(rest, btnType);
 
-    // const type = () => {
-    //     switch (btnType) {
-    //         case 'Primary' :
-    //             return PrimaryButton
-    //         case 'Secondary' :
-    //             return SecondaryButton
-    //         case 'Outline' :
-    //             return OutlineButton
-    //     }
-    // }
+    const checkButton = () => {
+        switch (btnType) {
+            case 'Primary' :
+                return PrimaryButton
+            case 'Secondary' :
+                return SecondaryButton
+            case 'Outline' :
+                return OutlineButton
+        }
+    }
 
-    // let costumButton = type();
+    const CustomButton = checkButton();
 
     return (
         <>
-            <Basebutton {...rest}>               
+            <CustomButton disabled={btnDisabled} {...rest}>               
                 {children}
-            </Basebutton>
+            </CustomButton>
         </>
     );
 }
