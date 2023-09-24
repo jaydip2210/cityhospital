@@ -1,5 +1,6 @@
 import React from 'react';
 import { DoctHeading, Heading } from '../../components/Ui/Heading/Heading';
+import { DoctText1 } from '../../components/Ui/Text/Text';
 
 function Docters(props) {
     return (
@@ -18,7 +19,7 @@ function Docters(props) {
           <div className="member-info">
             <DoctHeading>Atha Smith</DoctHeading>
             <span>Chief Medical Officer</span>
-            <p>Duis sagittis rutrum neque, quis tincidunt arcu pretium ac.</p>
+            <DoctText1>Duis sagittis rutrum neque, quis tincidunt arcu pretium ac.</DoctText1>
             <div className="social">
               <a href><i className="ri-twitter-fill" /></a>
               <a href><i className="ri-facebook-fill" /></a>
@@ -34,7 +35,7 @@ function Docters(props) {
           <div className="member-info">
             <DoctHeading>John White</DoctHeading>
             <span>Anesthesiologist</span>
-            <p>Aenean ac turpis ante. Mauris velit sapien.</p>
+            <DoctText1>Aenean ac turpis ante. Mauris velit sapien.</DoctText1>
             <div className="social">
               <a href><i className="ri-twitter-fill" /></a>
               <a href><i className="ri-facebook-fill" /></a>
@@ -50,7 +51,7 @@ function Docters(props) {
           <div className="member-info">
             <DoctHeading>Umika Loha</DoctHeading>
             <span>Cardiology</span>
-            <p>Curabitur luctus eleifend odio. Phasellus placerat mi.</p>
+            <DoctText1>Curabitur luctus eleifend odio. Phasellus placerat mi.</DoctText1>
             <div className="social">
               <a href><i className="ri-twitter-fill" /></a>
               <a href><i className="ri-facebook-fill" /></a>
@@ -66,7 +67,7 @@ function Docters(props) {
           <div className="member-info">
             <DoctHeading>Daimy Smith</DoctHeading>
             <span>Neurosurgeon</span>
-            <p>Morbi vulputate, tortor nec pellentesque molestie, eros nisi ornare purus.</p>
+            <DoctText1>Morbi vulputate, tortor nec pellentesque molestie, eros nisi ornare purus.</DoctText1>
             <div className="social">
               <a href><i className="ri-twitter-fill" /></a>
               <a href><i className="ri-facebook-fill" /></a>

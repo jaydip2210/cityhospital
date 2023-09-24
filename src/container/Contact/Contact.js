@@ -1,5 +1,6 @@
 import React from 'react';
 import { ContactHeading, Heading } from '../../components/Ui/Heading/Heading';
+import { CText1 } from '../../components/Ui/Text/Text';
 
 function Contact(props) {
     return (
@@ -19,17 +20,17 @@ function Contact(props) {
                             <div className="address">
                                 <i className="bi bi-geo-alt" />
                                 <ContactHeading>Location:</ContactHeading>
-                                <p> F-505, Inovative Plazza New Delhi, India</p>
+                                <CText1> F-505, Inovative Plazza New Delhi, India</CText1>
                             </div>
                             <div className="email">
                                 <i className="bi bi-envelope" />
                                 <ContactHeading>Email:</ContactHeading>
-                                <p>cityhospital@example.com</p>
+                                <CText1>cityhospital@example.com</CText1>
                             </div>
                             <div className="phone">
                                 <i className="bi bi-phone" />
                                 <ContactHeading>Call:</ContactHeading>
-                                <p>+91 9988776655</p>
+                                <CText1>+91 9988776655</CText1>
                             </div>
                         </div>
                     </div>

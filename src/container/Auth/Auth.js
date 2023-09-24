@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Button from '../../components/Ui/Button/Button';
 import Input from '../../components/Ui/Inputbox/Input';
-
+import { Heading } from '../../components/Ui/Heading/Heading';
 
 function Auth(props) {
     const [type, setType] = useState('login');
@@ -13,7 +13,7 @@ function Auth(props) {
                 <div className="container">
                     <div className="section-title">
                         {
-                            type === 'login' ? <h2>Login</h2> : type === 'signUp' ? <h2>SignUp</h2> : <h2>Forget password</h2>
+                            type === 'login' ? <Heading>Login</Heading> : type === 'signUp' ? <Heading>SignUp</Heading> : <Heading>Forget password</Heading>
                         }
                         {/* <h2>Login / SignUp</h2> */}
                     </div>

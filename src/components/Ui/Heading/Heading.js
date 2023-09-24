@@ -1,5 +1,37 @@
 import styled from "styled-components";
 
+export const HeadHeading = styled.h1`
+    font-size: 30px;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    font-family: "Poppins", sans-serif;
+    float: left;
+`
+
+export const HeadHeading2 = styled.h2`
+    font-size: 21px;
+    color: #FF6337;
+    margin-top: 4px;
+`
+
+export const HomeHeading = styled.h1`
+    margin: 0;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 56px;
+    text-transform: uppercase;
+    color: #2c4964;
+`
+
+export const HomeHeading2 = styled.h2`
+    color: #2c4964;
+    margin: 10px 0 0 0;
+    font-size: 24px;
+`
+
 export const Heading = styled.h2`
     font-size: 32px;
     font-weight: bold;

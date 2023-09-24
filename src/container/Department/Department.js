@@ -1,5 +1,6 @@
 import React from 'react';
 import { DHeading, Heading, Heading2 } from '../../components/Ui/Heading/Heading';
+import { DText1, DText2 } from '../../components/Ui/Text/Text';
 
 function Department(props) {
     return (
@@ -35,11 +36,11 @@ function Department(props) {
                                     <div className="row">
                                         <div className="col-lg-8 details order-2 order-lg-1">
                                             <DHeading>E.N.T</DHeading>
-                                            <p className="fst-italic">Vestibulum volutpat luctus quam sed finibus. Sed luctus odio eget ex posuere
-                                                hendrerit. Donec iaculis nisi ut purus dapibus</p>
-                                            <p>Vivamus nisi mauris, blandit quis sem sit amet, posuere blandit diam. Cras quis quam suscipit,
+                                            <DText1 className="fst-italic">Vestibulum volutpat luctus quam sed finibus. Sed luctus odio eget ex posuere
+                                                hendrerit. Donec iaculis nisi ut purus dapibus</DText1>
+                                            <DText2>Vivamus nisi mauris, blandit quis sem sit amet, posuere blandit diam. Cras quis quam suscipit,
                                                 tincidunt neque non, ullamcorper erat. Quisque sapien ipsum, efficitur ac dui et, fringilla viverra
-                                                tellus. Proin urna augue, posuere ut pellentesque quis, cursus ac neque.</p>
+                                                tellus. Proin urna augue, posuere ut pellentesque quis, cursus ac neque.</DText2>
                                         </div>
                                         <div className="col-lg-4 text-center order-1 order-lg-2">
                                             <img src="../assets/img/departments-1.jpg" alt className="img-fluid" />

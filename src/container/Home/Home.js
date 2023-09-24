@@ -1,13 +1,14 @@
 import React from 'react';
-import { Heading, Heading2 } from '../../components/Ui/Heading/Heading';
+import { Heading, Heading2, HomeHeading, HomeHeading2 } from '../../components/Ui/Heading/Heading';
+import { Text1, Text2, Text3, Text4 } from '../../components/Ui/Text/Text';
 
 function Home(props) {
   return (
     <main id="main">
       <section id="hero" className="d-flex align-items-center">
         <div className="container">
-          <h1>Welcome to City <br />Multispeciality Hospital</h1>
-          <h2>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h2>
+          <HomeHeading>Welcome to City <br />Multispeciality Hospital</HomeHeading>
+          <HomeHeading2>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</HomeHeading2>
         </div>
       </section>
       <section id="why-us" className="why-us">
@@ -19,28 +20,28 @@ function Home(props) {
               <div className="count-box">
                 <i className="fas fa-user-md" />
                 <span>23</span>
-                <p>Doctors</p>
+                <Text1>Doctors</Text1>
               </div>
             </div>
             <div className="col-lg-3 col-md-6 mt-5 mt-md-0">
               <div className="count-box">
                 <i className="far fa-hospital" />
                 <span>18</span>
-                <p>Departments</p>
+                <Text1>Departments</Text1>
               </div>
             </div>
             <div className="col-lg-3 col-md-6 mt-5 mt-lg-0">
               <div className="count-box">
                 <i className="fas fa-heartbeat" />
                 <span>980</span>
-                <p>Patients</p>
+                <Text1>Patients</Text1>
               </div>
             </div>
             <div className="col-lg-3 col-md-6 mt-5 mt-lg-0">
               <div className="count-box">
                 <i className="fas fa-award" />
                 <span>12</span>
-                <p>Awards</p>
+                <Text1>Awards</Text1>
               </div>
             </div>
           </div>
@@ -50,51 +51,51 @@ function Home(props) {
         <div className="container">
           <div className="section-title">
             <Heading>Our Facilities</Heading>
-            <p>Nunc aliquam eget nibh eu euismod. Donec dapibus blandit quam volutpat sollicitudin. Fusce tincidunt sit
+            <Text2>Nunc aliquam eget nibh eu euismod. Donec dapibus blandit quam volutpat sollicitudin. Fusce tincidunt sit
               amet ex in volutpat. Donec lacinia finibus tortor. Curabitur luctus eleifend odio. Phasellus placerat mi et
-              suscipit pulvinar. Donec quis tristique lectus.</p>
+              suscipit pulvinar. Donec quis tristique lectus.</Text2>
           </div>
           <div className="row">
             <div className="col-lg-4 col-md-6 d-flex align-items-stretch">
               <div className="icon-box">
                 <div className="icon"><i className="fas fa-hospital-alt" /></div>
                 <h4><a href>24x7 Emergency Available</a></h4>
-                <p>Nullam accumsan, velit et porta consequat, purus leo congue risus</p>
+                <Text3>Nullam accumsan, velit et porta consequat, purus leo congue risus</Text3>
               </div>
             </div>
             <div className="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
               <div className="icon-box">
                 <div className="icon"><i className="fas fa-bed" /></div>
                 <h4><a href>40+ Bed Facilities</a></h4>
-                <p>Pellentesque id felis elit. Pellentesque blandit sem a nisi dictum</p>
+                <Text3>Pellentesque id felis elit. Pellentesque blandit sem a nisi dictum</Text3>
               </div>
             </div>
             <div className="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
               <div className="icon-box">
                 <div className="icon"><i className="fas fa-hospital-user" /></div>
                 <h4><a href>Cardiogram Machine</a></h4>
-                <p>Donec lacinia finibus tortor. Curabitur luctus eleifend odio.</p>
+                <Text3>Donec lacinia finibus tortor. Curabitur luctus eleifend odio.</Text3>
               </div>
             </div>
             <div className="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
               <div className="icon-box">
                 <div className="icon"><i className="fas fa-dna" /></div>
                 <h4><a href>X-ray and Sonography</a></h4>
-                <p>Aliquam auctor felis ut sem elementum, ac rutrum turpis venenatis.</p>
+                <Text3>Aliquam auctor felis ut sem elementum, ac rutrum turpis venenatis.</Text3>
               </div>
             </div>
             <div className="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
               <div className="icon-box">
                 <div className="icon"><i className="fas fa-wheelchair" /></div>
                 <h4><a href>Semi Special, Special and Delux Room Available</a></h4>
-                <p>Etiam in massa eu neque euismod consectetur.</p>
+                <Text3>Etiam in massa eu neque euismod consectetur.</Text3>
               </div>
             </div>
             <div className="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
               <div className="icon-box">
                 <div className="icon"><i className="fas fa-notes-medical" /></div>
                 <h4><a href>Medical</a></h4>
-                <p>Morbi vulputate, tortor nec pellentesque molestie</p>
+                <Text3>Morbi vulputate, tortor nec pellentesque molestie</Text3>
               </div>
             </div>
           </div>
@@ -111,14 +112,14 @@ function Home(props) {
                     <img src="assets/img/testimonials/testimonials-1.jpg" className="testimonial-img" alt />
                     <Heading2>Jacob Wilsson</Heading2>
                     <h4>Writer</h4>
-                    <p>
+                    <Text4>
                       <i className="bx bxs-quote-alt-left quote-icon-left" />
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere, lacus ac tincidunt tempor,
                       sapien justo ultrices ante, vel pharetra turpis ex ac nisi. Aliquam tempor egestas turpis, nec
                       commodo lorem egestas eleifend. Curabitur lacus ipsum, fermentum sit amet leo non, blandit tincidunt
                       turpis.
                       <i className="bx bxs-quote-alt-right quote-icon-right" />
-                    </p>
+                    </Text4>
                   </div>
                 </div>
               </div>

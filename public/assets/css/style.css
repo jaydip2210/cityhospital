@@ -168,7 +168,7 @@ a:hover {
   top: 0;
 }
 
-#header .logo {
+/* #header .logo {
   font-size: 30px;
   margin: 0;
   padding: 0;
@@ -177,7 +177,7 @@ a:hover {
   letter-spacing: 0.5px;
   font-family: "Poppins", sans-serif;
   float: left;
-}
+} */
 
 .menu {
   float: right;
@@ -187,11 +187,11 @@ a:hover {
   color: #2c4964;
 }
 
-.logo-tiny-text {
+/* .logo-tiny-text {
   font-size: 21px;
   color: #FF6337;
   margin-top: 4px;
-}
+} */
 
 #header .logo img {
   max-height: 40px;
@@ -461,20 +461,20 @@ a:hover {
   position: relative;
 }
 
-#hero h1 {
+/* #hero h1 {
   margin: 0;
   font-size: 48px;
   font-weight: 700;
   line-height: 56px;
   text-transform: uppercase;
   color: #2c4964;
-}
+} */
 
-#hero h2 {
+/* #hero h2 {
   color: #2c4964;
   margin: 10px 0 0 0;
   font-size: 24px;
-}
+} */
 
 #hero .btn-get-started {
   font-family: "Raleway", sans-serif;
@@ -575,9 +575,9 @@ section {
   left: calc(50% - 20px);
 } */
 
-.section-title p {
+/* .section-title p {
   margin-bottom: 0;
-}
+} */
 
 /*--------------------------------------------------------------
 # Breadcrumbs
@@ -911,12 +911,12 @@ section {
   color: #082744;
 }
 
-.counts .count-box p {
+/* .counts .count-box p {
   padding: 0;
   margin: 0;
   font-family: "Raleway", sans-serif;
   font-size: 14px;
-}
+} */
 
 /*--------------------------------------------------------------
 # Services
@@ -970,11 +970,11 @@ section {
   color: #2c4964;
 }
 
-.services .icon-box p {
+/* .services .icon-box p {
   line-height: 24px;
   font-size: 14px;
   margin-bottom: 0;
-}
+} */
 
 .services .icon-box:hover {
   background: #FF6337;
@@ -1137,13 +1137,13 @@ section {
   color: #2c4964;
 } */
 
-.departments .details p {
+/* .departments .details p {
   color: #777777;
-}
+} */
 
-.departments .details p:last-child {
+/* .departments .details p:last-child {
   margin-bottom: 0;
-}
+} */
 
 @media (max-width: 992px) {
   .departments .nav-link {
@@ -1214,10 +1214,10 @@ section {
   left: 0;
 }
 
-.doctors .member p {
+/* .doctors .member p {
   margin: 10px 0 0 0;
   font-size: 14px;
-}
+} */
 
 .doctors .member .social {
   margin-top: 12px;
@@ -1388,10 +1388,10 @@ section {
   top: 10px;
 }
 
-.testimonials .testimonial-item p {
+/* .testimonials .testimonial-item p {
   font-style: italic;
   margin: 15px auto 15px auto;
-}
+} */
 
 .testimonials .swiper-pagination {
   margin-top: 20px;
@@ -1471,12 +1471,12 @@ section {
   color: #2c4964;
 } */
 
-.contact .info p {
+/* .contact .info p {
   padding: 0 0 0 60px;
   margin-bottom: 0;
   font-size: 14px;
   color: #4b7dab;
-}
+} */
 
 .contact .info .email, .contact .info .phone {
   margin-top: 40px;

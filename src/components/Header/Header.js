@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import { HeadHeading, HeadHeading2 } from '../Ui/Heading/Heading';
 
 function Header(props) {
     return (
@@ -22,8 +23,8 @@ function Header(props) {
                 <div className="container d-flex align-items-center">
                     <div className="logo">
                         <a href="index.html">
-                            <h1 className="logo me-auto">City</h1><br />
-                            <h2 className="logo-tiny-text me-auto">Multispeciality Hospital</h2>
+                            <HeadHeading className="logo me-auto">City</HeadHeading><br />
+                            <HeadHeading2 className="logo-tiny-text me-auto">Multispeciality Hospital</HeadHeading2>
                         </a>
                     </div>
                     <nav id="navbar" className="navbar order-last order-lg-0">
