@@ -15,7 +15,7 @@ import Test from './components/Ui/Card/Test';
 function App() {
   return (
     <>
-      {/* <Header />
+      <Header />
       <Routes>
         <Route exact path='/' element={<Home />}/>
         <Route exact path='/department' element={<Department />}/>
@@ -25,8 +25,8 @@ function App() {
         <Route exact path='/Appointment' element={<Appointment />}/>
         <Route exact path='/Auth' element={<Auth />}/>       
       </Routes>
-      <Footer /> */}
-      <Test />
+      <Footer />
+      {/* <Test /> */}
     </>
   );
 }

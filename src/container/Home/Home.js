@@ -1,6 +1,7 @@
 import React from 'react';
 import { Heading, Heading2, HomeHeading, HomeHeading2 } from '../../components/Ui/Heading/Heading';
 import { Text1, Text2, Text3, Text4 } from '../../components/Ui/Text/Text';
+import Review from './Review';
 
 function Home(props) {
   return (
@@ -103,8 +104,8 @@ function Home(props) {
       </section>
       <section id="testimonials" className="testimonials">
         <div className="container">
-          <div className="section-title"><Heading>Reviews</Heading></div>
-          <div className="testimonials-slider swiper-container" data-aos="fade-up" data-aos-delay={100}>
+          {/* <div className="section-title"><Heading>Reviews</Heading></div> */}
+          {/* <div className="testimonials-slider swiper-container" data-aos="fade-up" data-aos-delay={100}>
             <div className="swiper-wrapper">
               <div className="swiper-slide">
                 <div className="testimonial-wrap">
@@ -189,9 +190,10 @@ function Home(props) {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
+      <Review />
       <section id="gallery" className="gallery">
         <div className="container">
           <div className="section-title">
