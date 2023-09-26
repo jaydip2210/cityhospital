@@ -10,11 +10,12 @@ import About from './container/About/About';
 import Contact from './container/Contact/Contact';
 import Appointment from './container/Appointment/Appointment';
 import Auth from './container/Auth/Auth';
+import Test from './components/Ui/Card/Test';
 
 function App() {
   return (
     <>
-      <Header />
+      {/* <Header />
       <Routes>
         <Route exact path='/' element={<Home />}/>
         <Route exact path='/department' element={<Department />}/>
@@ -24,7 +25,8 @@ function App() {
         <Route exact path='/Appointment' element={<Appointment />}/>
         <Route exact path='/Auth' element={<Auth />}/>       
       </Routes>
-      <Footer />
+      <Footer /> */}
+      <Test />
     </>
   );
 }

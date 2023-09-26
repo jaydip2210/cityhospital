@@ -1,16 +1,17 @@
 import React from 'react';
+import { Container, Heading, Heading2, Img, MainDiv } from './Card.Style';
 
 function Card({ id, img = '', title = '', subtitle }) {
     return (
-        <div>
+        <Container>
             {
                 <MainDiv>
-                    <Heading1>{img}</Heading1>
+                    <Img>{img}</Img>
                     <Heading>{title}</Heading>
-                    <Ptag>{subtitle}</Ptag>
+                    <Heading2>{subtitle}</Heading2>
                 </MainDiv>
             }
-        </div>
+        </Container>
     );
 }
 
