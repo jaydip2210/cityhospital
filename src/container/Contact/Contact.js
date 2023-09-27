@@ -1,8 +1,34 @@
 import React from 'react';
 import { ContactHeading, Heading } from '../../components/Ui/Heading/Heading';
 import { CText1 } from '../../components/Ui/Text/Text';
+import * as yup from 'yup';
+import { useFormik } from 'formik';
+import { hasFormSubmit } from '@testing-library/user-event/dist/utils';
 
 function Contact(props) {
+    let contactSchema = yup.object().shape({
+        name: yup.string().required("please enter name").matches(/^([a-zA-Z ]){2,30}$/, "Please enter valid name"),
+        email: yup.string().email("Plase enter valid email").required("please enter email"),
+        subject: yup.string().required("Please enter subject"),
+        message: yup.string().required("Please enter message")
+    });
+
+    const formikobj = useFormik({
+        initialValues: {
+            name: '',
+            email: '',
+            subject: '',
+            message: ''
+        },
+        onSubmit: values => {
+            console.log(values);
+        },
+        validationSchema: contactSchema
+    });
+
+    const { handleSubmit, handleChange, handleBlur, values, errors, touched } = formikobj;
+
+
     return (
         <section id="contact" className="contact">
             <div className="container">
@@ -35,20 +61,57 @@ function Contact(props) {
                         </div>
                     </div>
                     <div className="col-lg-8 mt-5 mt-lg-0">
-                        <form action method="post" role="form" className="php-email-form">
+                        <form onSubmit={handleSubmit} role="form" className="php-email-form">
                             <div className="row">
                                 <div className="col-md-6 form-group">
-                                    <input type="text" name="name" className="form-control" id="name" placeholder="Your Name" required />
+                                    <input type="text"
+                                        name="name"
+                                        className="form-control"
+                                        id="name"
+                                        placeholder="Your Name"
+                                        onChange={handleChange}
+                                        onBlur={handleBlur}
+                                        values={values.name}
+                                    />
+                                    {errors.name && touched.name ? <span>{errors.name}</span> : null}
                                 </div>
                                 <div className="col-md-6 form-group mt-3 mt-md-0">
-                                    <input type="email" className="form-control" name="email" id="email" placeholder="Your Email" required />
+                                    <input
+                                        type="email"
+                                        className="form-control"
+                                        name="email"
+                                        id="email"
+                                        placeholder="Your Email"
+                                        onChange={handleChange}
+                                        onBlur={handleBlur}
+                                        values={values.email}
+                                    />
+                                    {errors.email && touched.email ? <span>{errors.email}</span> : null}
                                 </div>
                             </div>
                             <div className="form-group mt-3">
-                                <input type="text" className="form-control" name="subject" id="subject" placeholder="Subject" required />
+                                <input
+                                    type="text"
+                                    className="form-control"
+                                    name="subject"
+                                    id="subject"
+                                    placeholder="Subject"
+                                    onChange={handleChange}
+                                    onBlur={handleBlur}
+                                    values={values.subject}
+                                />
+                                {errors.subject && touched.subject ? <span>{errors.subject}</span> : null}
                             </div>
                             <div className="form-group mt-3">
-                                <textarea className="form-control" name="message" rows={5} placeholder="Message" required defaultValue={""} />
+                                <textarea
+                                    className="form-control"
+                                    name="message" rows={5}
+                                    placeholder="Message"
+                                    onChange={handleChange}
+                                    onBlur={handleBlur}
+                                    values={values.message}
+                                />
+                                {errors.message && touched.message ? <span>{errors.message}</span> : null}
                             </div>
                             <div className="my-3">
                                 <div className="loading">Loading</div>
@@ -63,6 +126,5 @@ function Contact(props) {
         </section>
 
     );
-}
-
+};
 export default Contact;
