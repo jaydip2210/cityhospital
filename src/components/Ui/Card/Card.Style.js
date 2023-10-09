@@ -1,24 +1,29 @@
 import styled from "styled-components"
 
 export const Container = styled.div`
-    --bs-gutter-x: 1.5rem;
-    --bs-gutter-y: 0;
-    width: 100%;
-    padding-right: calc(var(--bs-gutter-x) * .5);
-    padding-left: calc(var(--bs-gutter-x) * .5);
-    margin-right: auto;
-    margin-left: auto;
-    max-width: 1320px;
+    // --bs-gutter-x: 1.5rem;
+    // --bs-gutter-y: 0;
+    // width: 100%;
+    // padding-right: calc(var(--bs-gutter-x) * .5);
+    // padding-left: calc(var(--bs-gutter-x) * .5);
+    // margin-right: auto;
+    // margin-left: auto;
+    // max-width: 1320px;
+
+    // border: 2px solid black;
+
 `
 
 export const MainDiv = styled.div`
-    --bs-gutter-x: 1.5rem;
-    --bs-gutter-y: 0;
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: calc(-1 * var(--bs-gutter-y));
-    margin-right: calc(-.5 * var(--bs-gutter-x));
-    margin-left: calc(-.5 * var(--bs-gutter-x));
+    // --bs-gutter-x: 1.5rem;
+    // --bs-gutter-y: 0;
+    // display: flex;
+    // flex-wrap: wrap;
+    // margin-top: calc(-1 * var(--bs-gutter-y));
+    // margin-right: calc(-.5 * var(--bs-gutter-x));
+    // margin-left: calc(-.5 * var(--bs-gutter-x));
+
+    border: 2px solid black;
 `
 
 export const DivBox = styled.div`
@@ -34,13 +39,13 @@ export const DivBox = styled.div`
 `
 
 export const Heading = styled.h2`
-    margin-top: 0;
-    margin-bottom: 0.5rem;
-    font-weight: 500;
-    line-height: 1.2;
-    color: red;
-    box-sizing: border-box;
-    font-size: 2rem;
+    // margin-top: 0;
+    // margin-bottom: 0.5rem;
+    // font-weight: 500;
+    // line-height: 1.2;
+    // color: red;
+    // box-sizing: border-box;
+    // font-size: 2rem;
 `
 export const Img = styled.p`
     margin-top: 0;
@@ -58,10 +63,10 @@ export const Heading1 = styled.h3`
 `
 
 export const Heading2 = styled.h4`
-    margin-top: 0;
-    margin-bottom: 0.5rem;
-    font-weight: 500;
-    line-height: 1.2;
-    color: orange;
-    font-size: 1.5rem;
+    // margin-top: 0;
+    // margin-bottom: 0.5rem;
+    // font-weight: 500;
+    // line-height: 1.2;
+    // color: orange;
+    // font-size: 1.5rem;
 `

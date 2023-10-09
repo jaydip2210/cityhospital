@@ -13,3 +13,7 @@ export const Baseinput = styled.input`
         box-shadow: none;
     }
 `
+export const InputError = styled.span`
+    color: red;
+    display: ${props => props.errorText ? 'inline-block' : 'none'}
+`

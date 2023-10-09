@@ -9,8 +9,8 @@ function Contact(props) {
     let contactSchema = yup.object().shape({
         name: yup.string().required("please enter name").matches(/^([a-zA-Z ]){2,30}$/, "Please enter valid name"),
         email: yup.string().email("Plase enter valid email").required("please enter email"),
-        subject: yup.string().required("Please enter subject"),
-        message: yup.string().required("Please enter message")
+        subject: yup.string().required("Please enter subject").max(30, "Please enter valid subject"),
+        message: yup.string().required("Please enter message").min(2, "Minimum 30 character valid").max(100, "Maximum 100 character Allowed")
     });
 
     const formikobj = useFormik({

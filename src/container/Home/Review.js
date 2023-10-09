@@ -10,6 +10,7 @@ import 'swiper/css/pagination';
 import { Navigation } from 'swiper/modules';
 import { Heading } from '../../components/Ui/Heading/Heading';
 import Card from '../../components/Ui/Card/Card';
+import { Link } from 'react-router-dom';
 
 function Review(props) {
 
@@ -40,15 +41,15 @@ function Review(props) {
                         }}
                         breakpoints={{
                             640: {
-                                slidesPerView: 2,
+                                slidesPerView: 1,
                                 spaceBetween: 20,
                             },
                             768: {
-                                slidesPerView: 4,
+                                slidesPerView: 2,
                                 spaceBetween: 40,
                             },
                             1024: {
-                                slidesPerView: 5,
+                                slidesPerView: 3,
                                 spaceBetween: 50,
                             },
                         }}
@@ -60,9 +61,12 @@ function Review(props) {
                             rData.map((v) => {
                                 return (
                                     <SwiperSlide>
-                                        {/* <Card /> */}
-                                        title={v.name}
-                                        subtitle={v.body}
+                                        <Link to={"/review-details" + v.id}>
+                                            <Card
+                                                title={v.name.substring(0, 15)}
+                                                subtitle={v.body.substring(0, 150)}
+                                            />
+                                        </Link>
                                     </SwiperSlide>
                                 )
                             })
