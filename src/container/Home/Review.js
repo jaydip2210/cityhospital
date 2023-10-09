@@ -1,12 +1,7 @@
 import React, { useEffect, useState } from 'react';
-// Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
-
-// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
-
-// import required modules
 import { Navigation } from 'swiper/modules';
 import { Heading } from '../../components/Ui/Heading/Heading';
 import Card from '../../components/Ui/Card/Card';
@@ -61,7 +56,7 @@ function Review(props) {
                             rData.map((v) => {
                                 return (
                                     <SwiperSlide>
-                                        <Link to={"/review-details" + v.id}>
+                                        <Link to={"/review-details/" + v.id}>
                                             <Card
                                                 title={v.name.substring(0, 15)}
                                                 subtitle={v.body.substring(0, 150)}

@@ -78,7 +78,7 @@ function Auth(props) {
                                 type === 'signUp' ? <div className="col-md-8 form-group">
                                     <Input type="text" name="name" className="form-control" id="name" placeholder="Your Name"
                                         value={values.name}
-                                        onchange={handleChange}
+                                        onChange={handleChange}
                                         onBlur={handleBlur}
                                         errorText={errors.name && touched.name ? errors.name : ''} />
                                     {/* {errors.name && touched.name ? <span>{errors.name}</span> : null} */}
@@ -87,7 +87,7 @@ function Auth(props) {
                             <div className="col-md-8 form-group mt-3 mt-md-0">
                                 <Input type="email" className="form-control" name="email" id="email" placeholder="Your Email"
                                     value={values.email}
-                                    onchange={handleChange}
+                                    onChange={handleChange}
                                     onBlur={handleBlur} 
                                     errorText={errors.email && touched.email ? errors.email : ''} />
                                 {/* {errors.email && touched.email ? <span>{errors.email}</span> : null} */}
@@ -97,7 +97,7 @@ function Auth(props) {
                                 type === 'login' || type === 'signUp' ? <div className="col-md-8 form-group mt-3 mt-md-0">
                                     <Input type="tel" className="form-control" name="password" id="password" placeholder="Your password"
                                         value={values.password}
-                                        onchange={handleChange}
+                                        onChange={handleChange}
                                         onBlur={handleBlur}
                                         errorText={errors.password && touched.password ? errors.password : ''} />
                                     {/* {errors.password && touched.password ? <span>{errors.password}</span> : null} */}
@@ -108,7 +108,7 @@ function Auth(props) {
                                 type === 'signUp' ? <div className="col-md-8 form-group mt-3 mt-md-0">
                                     <Input type="tel" className="form-control" name="con_password" id="con_password" placeholder="Your confirm password"
                                         value={values.con_password}
-                                        onchange={handleChange}
+                                        onChange={handleChange}
                                         onBlur={handleBlur}
                                         errorText={errors.con_password && touched.con_password ? errors.con_password : ''} />
                                     {/* {errors.con_password && touched.con_password ? <span>{errors.con_password}</span> : null} */}

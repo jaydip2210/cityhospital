@@ -7,9 +7,9 @@ function ReviewDetails(props) {
     const {id} = useParams();
 
     const getData = async () => {
-        let response = await fetch("https://jsonplaceholder.typicode.com/comments"); //string na format ma male
+        let response = await fetch("https://jsonplaceholder.typicode.com/comments"); 
 
-        let data = await response.json(); //ane json ma ferva
+        let data = await response.json();
         // setRdata(data);
         // console.log(data);
 
