@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 
 function MedicineData(props) {
+
     const medicine = [
         {
             "id": 1,
@@ -62,6 +63,7 @@ function MedicineData(props) {
     ]
     const { id } = useParams()
 
+    
     let fData= medicine.filter((v) => v.id == id)
    console.log(fData);
     return (

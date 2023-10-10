@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../App.css';
 import Home from '../container/Home/Home';
 import { Route, Routes } from 'react-router-dom';
@@ -17,15 +17,16 @@ import Medicines from '../container/Medicines/Medicines';
 import MedicineData from '../container/Medicines/MedicineData'
 
 function UserRoute(props) {
+    const [countCart, setCountCart] = useState(0)
     return (
         <>
-            <Header />
+            <Header countCart={countCart} />
             <Routes>
                 <Route exact path='/' element={<Home />} />
                 <Route exact path='/department' element={<Department />} />
                 <Route exact path='/department/:id' element={<Dept />} />
                 <Route exact path='/docters' element={<Docters />} />
-                <Route exact path='/medicines' element={<Medicines />} />
+                <Route exact path='/medicines' element={<Medicines increment={setCountCart} />} />
                 <Route exact path='/medicineslist/:id' element={<MedicineData />} />
                 <Route exact path='/About' element={<About />} />
                 <Route exact path='/Contact' element={<Contact />} />

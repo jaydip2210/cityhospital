@@ -9,7 +9,6 @@ function Medicines(props) {
     const [mData, setMData] = useState([]);
     const [updte, setUpdate] = useState(false);
 
-
     useEffect(() => {
         let localData = JSON.parse(localStorage.getItem("medicines"));
         if (localData) {
@@ -52,15 +51,12 @@ function Medicines(props) {
 
     }
 
-
     const Tabledata = (data) => {
         console.log('rhfrfhrfr');
         console.log(data);
 
     }
     // Tabledata()
-
-
 
     const handleEdit = (data) => {
         // console.log(data);
@@ -103,7 +99,6 @@ function Medicines(props) {
         },
 
     ];
-
 
     return (
         <div>

@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import Card from '../../components/Ui/Card/Card';
 
 const medicine = [
     {
@@ -59,72 +60,107 @@ const medicine = [
     }
 ]
 
-function Medicines(props) {
-    const [medicines, setMedicines] = useState(medicine);
-    const [search, setSearch] = useState('');
-    const [sort, setSort] = useState('');
+function Medicines({increment}) {
+    const [mdata, setMdata] = useState([]);
+    // const [medicines, setMedicines] = useState(medicine);
+    // const [search, setSearch] = useState('');
+    // const [sort, setSort] = useState('');
 
-    let localData = JSON.parse(localStorage.getItem("medicine"));
+    // let localData = JSON.parse(localStorage.getItem("medicines"));
     // console.log(localData);
 
-    const handalsearchSort = () => {
-        console.log('yyyy');
-        
-        let localData = JSON.parse(localStorage.getItem("medicine"));
-        // console.log(localData);
+    // const handalsearchSort = () => {
+    //     console.log('yyyy');
 
-        let Data = localData.filter((v) => {
-            return(
-                v.name.toLowerCase().includes(search.toLowerCase()) ||
-                v.price.toString().includes(search.toString())
-            )
-          
-        })
+    //     let localData = JSON.parse(localStorage.getItem("medicines"));
+    //     console.log(localData);
 
-        Data = Data.sort((a,b) => {
-            if(sort === 'az'){
-                return a.name.localeCompare(b.name)
-            }else if(sort === 'za'){
-                return b.name.localeCompare(a.name)
-            }else if(sort === 'low'){
-                return a.price - b.price;
-            } else if(sort === 'higth'){
-                return b.price - a.price;
-            }
-        })
-        console.log(Data);
+    //     let Data = localData.filter((v) => {
+    //         return(
+    //             v.name.toLowerCase().includes(search.toLowerCase()) ||
+    //             v.price.toString().includes(search.toString())
+    //         )
 
-        return Data
+    //     })
+
+    //     Data = Data.sort((a,b) => {
+    //         if(sort === 'az'){
+    //             return a.name.localeCompare(b.name)
+    //         }else if(sort === 'za'){
+    //             return b.name.localeCompare(a.name)
+    //         }else if(sort === 'low'){
+    //             return a.price - b.price;
+    //         } else if(sort === 'high'){
+    //             return b.price - a.price;
+    //         }
+    //     })
+    //     console.log(Data);
+
+    //     return Data
+    // }
+
+    // const finalData = handalsearchSort()
+
+    ///////////////////////////////////////////////////////////////
+    const getData = () => {
+        let localData = JSON.parse(localStorage.getItem("medicines"));
+        console.log(localData);
+
+        setMdata(localData);
     }
 
-    const finalData = handalsearchSort()
+    useEffect(() => {
+        getData();
+    }, [])
+
+    const handleAddToCart = () => {
+        console.log("hhghgh");
+        increment((prev) => prev + 1)
+    }
 
     return (
-        <div>
-            <input placeholder='Search' onChange={(e) => setSearch(e.target.value)}></input>
+        // <div>
+        //     <br></br>
+        //     <input placeholder='Search' onChange={(e) => setSearch(e.target.value)}></input>
 
-            <select onChange={(e) => setSort(e.target.value)}>
-                <option value='0'>--select--</option>
-                <option value='low'>Low price</option>
-                <option value='high'>high price</option>
-                <option value='a'>A to Z</option>
-                <option value='z'>Z to A</option>
-            </select>
+        //     <select onChange={(e) => setSort(e.target.value)}>
+        //         <option value='0'>--select--</option>
+        //         <option value='low'>Low price</option>
+        //         <option value='high'>high price</option>
+        //         <option value='a'>A to Z</option>
+        //         <option value='z'>Z to A</option>
+        //     </select>
+        //     {
+        //         finalData.map((v) => {
+        //             return (
+        //                 <section id="doctors" className="doctors">
+        //                     <div className="container">
+        //                         <div className="section-title">
+        //                            <h2>{v.name}</h2>
+        //                            <h3>{v.price}</h3>
+        //                         </div>
+        //                     </div>
+        //                 </section>
+        //             )
+        //         })
+        //     }         
+           
+        // </div>
+
+        <>
             {
-                finalData.map((v) => {
+                mdata.map((v) => {
                     return (
-                        <section id="doctors" className="doctors">
-                            <div className="container">
-                                <div className="section-title">
-                                   <h2>{v.name}</h2>
-                                   <h3>{v.price}</h3>
-                                </div>
-                            </div>
-                        </section>
+                        <Card
+                            title={v.name}
+                            subtitle={v.price}
+                            btnvalue='Add To Card'
+                            btnClick={handleAddToCart}
+                        />
                     )
                 })
             }
-        </div>
+        </>
     );
 }
 
