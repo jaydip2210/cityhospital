@@ -32,9 +32,9 @@ function App() {
       <Routes>
         <Route path='/*' element={<UserRoute />} />
         {/* <Route path='/admin/*' element={<AdminRoute />} /> */}
-        <Route element={<PrivateRoute />}>
+        {/* <Route element={<PrivateRoute />}> */}
           <Route path='/admin/*' element={<AdminRoute />} />
-        </Route>
+        {/* </Route> */}
       </Routes>
       {/* <Footer /> */}
       {/* <Test /> */}
