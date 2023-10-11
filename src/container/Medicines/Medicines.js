@@ -60,8 +60,11 @@ const medicine = [
     }
 ]
 
-function Medicines({increment}) {
+function Medicines({increment, fav, setFav}) {
     const [mdata, setMdata] = useState([]);
+
+    // const [fav, setFav] = useState([]);
+
     // const [medicines, setMedicines] = useState(medicine);
     // const [search, setSearch] = useState('');
     // const [sort, setSort] = useState('');
@@ -118,6 +121,17 @@ function Medicines({increment}) {
         increment((prev) => prev + 1)
     }
 
+    const handleFav = (id) => {
+        // console.log(id);
+        if(fav.includes(id)) {
+            let fData = fav.filter((v) => v !== id)
+            setFav(fData);
+        } else {
+            setFav((prev) => [...prev, id])
+        }
+    }
+    console.log(fav);
+
     return (
         // <div>
         //     <br></br>
@@ -147,7 +161,7 @@ function Medicines({increment}) {
            
         // </div>
 
-        <>
+        <div className='container'>
             {
                 mdata.map((v) => {
                     return (
@@ -156,11 +170,13 @@ function Medicines({increment}) {
                             subtitle={v.price}
                             btnvalue='Add To Card'
                             btnClick={handleAddToCart}
+                            favClick={() => handleFav(v.id)}
+                            favStatus={() => fav.includes(v.id) ? true : false}
                         />
                     )
                 })
             }
-        </>
+        </div>
     );
 }
 
