@@ -15,6 +15,7 @@ import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
 import Medicines from '../container/Medicines/Medicines';
 import MedicineData from '../container/Medicines/MedicineData'
+import AppointmentMultiStep from '../container/Appointment/AppointmentMultiStep';
 
 function UserRoute(props) {
     const [countCart, setCountCart] = useState(0);
@@ -33,7 +34,8 @@ function UserRoute(props) {
                 <Route exact path='/Contact' element={<Contact />} />
                 <Route exact path='/review-details/:id' element={<ReviewDetails />} />
                 {/* <Route element={<PrivateRoute />}> */}
-                    <Route exact path='/Appointment' element={<Appointment />} />
+                    {/* <Route exact path='/Appointment' element={<Appointment />} /> */}
+                    <Route exact path='/Appointment' element={<AppointmentMultiStep />} />
                 {/* </Route> */}
 
                 <Route exact path='/Auth' element={<Auth />} />

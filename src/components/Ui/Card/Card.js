@@ -6,19 +6,19 @@ import Badge from '@mui/material/Badge';
 import MailIcon from '@mui/icons-material/Mail';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import FavoriteIcon from '@mui/icons-material/Favorite';
+import { IconButton } from '@mui/material';
 
 function Card({ id, img = '', title = '', subtitle, btnvalue = '', btnClick, favClick, favStatus }) {
+    console.log(favStatus);
     return (
         <Container>
             {
                 <MainDiv>
                     <br></br>
-                    <FavoriteBorderIcon aria-label="cart" onClick={favClick}>
-                        <Badge color="primary">
+                    <IconButton  aria-label="cart" onClick={favClick}>
                             {favStatus ? <FavoriteIcon /> : <FavoriteBorderIcon color="action" />}
                             {/* <MailIcon color="action" /> */}
-                        </Badge>
-                    </FavoriteBorderIcon>
+                    </IconButton >
 
                     <Img>{img}</Img>
                     <Heading>{title}</Heading>

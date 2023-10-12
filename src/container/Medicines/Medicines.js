@@ -171,7 +171,7 @@ function Medicines({increment, fav, setFav}) {
                             btnvalue='Add To Card'
                             btnClick={handleAddToCart}
                             favClick={() => handleFav(v.id)}
-                            favStatus={() => fav.includes(v.id) ? true : false}
+                            favStatus={fav.includes(v.id) ? true : false}
                         />
                     )
                 })
