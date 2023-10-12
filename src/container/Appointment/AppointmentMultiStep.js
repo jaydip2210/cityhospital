@@ -86,7 +86,7 @@ function AppointmentMultiStep(props) {
                             {step === 3 && (
                                 <div>
                                     <label htmlFor="productImage">Product Image</label>
-                                    <input
+                                    <Field
                                         type="file"
                                         name="productImage"
                                         accept="image/*"
