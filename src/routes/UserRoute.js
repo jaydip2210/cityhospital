@@ -16,6 +16,7 @@ import Footer from '../components/Footer/Footer';
 import Medicines from '../container/Medicines/Medicines';
 import MedicineData from '../container/Medicines/MedicineData'
 import AppointmentMultiStep from '../container/Appointment/AppointmentMultiStep';
+import Counter from '../container/Counter/Counter';
 
 function UserRoute(props) {
     const [countCart, setCountCart] = useState(0);
@@ -39,6 +40,7 @@ function UserRoute(props) {
                 {/* </Route> */}
 
                 <Route exact path='/Auth' element={<Auth />} />
+                <Route exact path='/counter' element={<Counter />} />
             </Routes>
             <Footer />
         </>

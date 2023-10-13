@@ -7,8 +7,10 @@ import { styled } from '@mui/material/styles';
 import IconButton from '@mui/material/IconButton';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import FavoriteIcon from '@mui/icons-material/Favorite';
+import { useSelector } from 'react-redux';
 
 function Header({ countCart, fav }) {
+    const c1 = useSelector(state => state.counter)
     const StyledBadge = styled(Badge)(({ theme }) => ({
         '& .MuiBadge-badge': {
             right: -3,
@@ -26,7 +28,8 @@ function Header({ countCart, fav }) {
                         <i className="bi bi-phone" /> +91 9988776655
                     </div>
                     <IconButton aria-label="cart">
-                        <StyledBadge badgeContent={countCart} color="secondary">
+                        {/* <StyledBadge badgeContent={countCart} color="secondary"> */}
+                        <StyledBadge badgeContent={c1.count} color="secondary">
                             <ShoppingCartIcon />
                         </StyledBadge>
                     </IconButton>
@@ -63,6 +66,7 @@ function Header({ countCart, fav }) {
                                 Departments
                             </NavLink>
                             </li>
+                            <li><NavLink className="nav-link scrollto" to="/counter">Counter</NavLink></li>
                             <li><NavLink className="nav-link scrollto" to="/docters">Doctors</NavLink></li>
                             <li><NavLink className="nav-link scrollto" to="/medicines">Medicines</NavLink></li>
                             <li><NavLink className="nav-link scrollto " to="/About">About</NavLink></li>

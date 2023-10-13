@@ -6,6 +6,8 @@ import { Route, Routes } from 'react-router-dom';
 import UserRoute from './routes/UserRoute';
 import AdminRoute from './routes/AdminRoute';
 import PrivateRoute from './routes/PrivateRoute';
+import { Provider } from 'react-redux';
+import { configureStore } from './redux/store';
 // import Home from './container/Home/Home';
 // import { Route, Routes } from 'react-router-dom';
 // import Department from './container/Department/Department';
@@ -17,6 +19,7 @@ import PrivateRoute from './routes/PrivateRoute';
 // import Test from './components/Ui/Card/Test';
 
 function App() {
+  const store = configureStore();
   return (
     <>
       {/* <Header /> */}
@@ -29,13 +32,15 @@ function App() {
         <Route exact path='/Appointment' element={<Appointment />}/>
         <Route exact path='/Auth' element={<Auth />}/>       
       </Routes> */}
-      <Routes>
-        <Route path='/*' element={<UserRoute />} />
-        {/* <Route path='/admin/*' element={<AdminRoute />} /> */}
-        {/* <Route element={<PrivateRoute />}> */}
+      <Provider store={store}>
+        <Routes>
+          <Route path='/*' element={<UserRoute />} />
+          {/* <Route path='/admin/*' element={<AdminRoute />} /> */}
+          {/* <Route element={<PrivateRoute />}> */}
           <Route path='/admin/*' element={<AdminRoute />} />
-        {/* </Route> */}
-      </Routes>
+          {/* </Route> */}
+        </Routes>
+      </Provider>
       {/* <Footer /> */}
       {/* <Test /> */}
     </>
