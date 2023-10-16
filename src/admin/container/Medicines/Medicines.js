@@ -4,16 +4,23 @@ import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { DataGrid } from '@mui/x-data-grid';
 import MedicineFrom from './MedicineFrom';
+import { getMedicines } from '../../../redux/action/medicines.action';
+import { useDispatch, useSelector } from 'react-redux';
 
 function Medicines(props) {
     const [mData, setMData] = useState([]);
     const [updte, setUpdate] = useState(false);
 
+    const dispatch = useDispatch();
+    const medicines = useSelector(state => state.medicines)
+    console.log(medicines);
+
     useEffect(() => {
-        let localData = JSON.parse(localStorage.getItem("medicines"));
-        if (localData) {
-            setMData(localData);
-        }
+        // let localData = JSON.parse(localStorage.getItem("medicines"));
+        // if (localData) {
+        //     setMData(localData);
+        // }
+        dispatch(getMedicines())
     }, [])
 
     const handleFormSubmit = (data) => {
@@ -105,7 +112,7 @@ function Medicines(props) {
             <MedicineFrom onHandleSubmit={handleFormSubmit} onupdte={updte}/>
             <div style={{ height: 400, width: '100%' }}>
                 <DataGrid
-                    rows={mData}
+                    rows={medicines.medicines}
                     columns={columns}
                     initialState={{
                         pagination: {
