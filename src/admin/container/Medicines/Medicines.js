@@ -4,7 +4,7 @@ import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { DataGrid } from '@mui/x-data-grid';
 import MedicineFrom from './MedicineFrom';
-import { deleteMedicines, getMedicines } from '../../../redux/action/medicines.action';
+import { addMedicines, deleteMedicines, getMedicines, updataMedicines } from '../../../redux/action/medicines.action';
 import { useDispatch, useSelector } from 'react-redux';
 
 function Medicines(props) {
@@ -24,32 +24,42 @@ function Medicines(props) {
     }, [])
 
     const handleFormSubmit = (data) => {
-        let localData = JSON.parse(localStorage.getItem("medicines"));
-        // console.log(localData);
-        let id = Math.floor(Math.random() * 1000)
-        if (localData) {
-            if (updte) {
-                let localData = JSON.parse(localStorage.getItem("medicines"));
+        // let localData = JSON.parse(localStorage.getItem("medicines"));
+        // // console.log(localData);
+        // let id = Math.floor(Math.random() * 1000)
+        // if (localData) {
+        //     if (updte) {
+        //         let localData = JSON.parse(localStorage.getItem("medicines"));
 
-                let index = localData.findIndex((v) => v.id == data.id)
-                console.log(index);
+        //         let index = localData.findIndex((v) => v.id == data.id)
+        //         console.log(index);
 
-                localData[index] = data;
+        //         localData[index] = data;
 
-                localStorage.setItem("medicines", JSON.stringify(localData))
-                setMData(localData)
+        //         localStorage.setItem("medicines", JSON.stringify(localData))
+        //         setMData(localData)
 
-                setUpdate(false)
-            } else {
-                localData.push({ id: id, ...data });
-                localStorage.setItem("medicines", JSON.stringify(localData))
-                setMData(localData)
-                // console.log(localData);
-            }
+        //         setUpdate(false)
+        //     } else {
+        //         localData.push({ id: id, ...data });
+        //         localStorage.setItem("medicines", JSON.stringify(localData))
+        //         setMData(localData)
+        //         // console.log(localData);
+        //     }
 
+        // } else {
+        //     localStorage.setItem("medicines", JSON.stringify([{ id, ...data }]))
+        //     setMData([{ id, ...data }])
+        // }
+
+        ////////////////////////////////
+
+        // dispatch(addMedicines(data)); //add
+
+        if (updte) {
+            dispatch(updataMedicines(data));
         } else {
-            localStorage.setItem("medicines", JSON.stringify([{ id, ...data }]))
-            setMData([{ id, ...data }])
+            dispatch(addMedicines(data));
         }
     }
 
@@ -86,7 +96,7 @@ function Medicines(props) {
     }
 
     const columns = [
-        { field: 'name', headerName: 'Name', width: 70 },
+        { field: 'name', headerName: 'Name', width: 130 },
         { field: 'price', headerName: 'Price', width: 130 },
         { field: 'date', headerName: 'date', width: 130 },
         {
