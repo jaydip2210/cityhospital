@@ -4,7 +4,7 @@ import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { DataGrid } from '@mui/x-data-grid';
 import MedicineFrom from './MedicineFrom';
-import { getMedicines } from '../../../redux/action/medicines.action';
+import { deleteMedicines, getMedicines } from '../../../redux/action/medicines.action';
 import { useDispatch, useSelector } from 'react-redux';
 
 function Medicines(props) {
@@ -75,13 +75,14 @@ function Medicines(props) {
 
     const handleDelete = (id) => {
         // console.log(id);
-        let localData = JSON.parse(localStorage.getItem("medicines"));
+        // let localData = JSON.parse(localStorage.getItem("medicines"));
 
-        let fData = localData.filter((v) => v.id !== id)
+        // let fData = localData.filter((v) => v.id !== id)
 
-        localStorage.setItem("medicines", JSON.stringify(fData))
-        setMData(fData)
+        // localStorage.setItem("medicines", JSON.stringify(fData))
+        // setMData(fData)
 
+        dispatch(deleteMedicines(id));
     }
 
     const columns = [
