@@ -29,10 +29,24 @@
       "desc": "Orlistat, sold under the brand name Xenical among others, is a medication used to treat obesity. Its primary function is preventing the absorption of fats from the human diet by acting as a lipase inhibitor, thereby reducing caloric intake."
     },
     {
-      "name": "abcd",
-      "price": "125",
-      "date": "2023-10-20",
+      "name": "abcxyz",
+      "price": "120",
+      "date": "2023-10-21",
       "id": 9
+    }
+  ],
+  "department": [
+    {
+      "id": 1,
+      "name": "E.N.M",
+      "shortmsg": "Vestibulum volutpat luctus quam sed finibus.",
+      "longmsg": "Vivamus nisi mauris, blandit quis sem sit amet, posuere blandit diam. Cras quis quam suscipit, tincidunt neque non, ullamcorper erat."
+    },
+    {
+      "name": "tool",
+      "shortmsg": "jfjjgjjggjjhjhjhj",
+      "longmsg": "fvfvfvfvfvffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "id": 2
     }
   ]
 }
