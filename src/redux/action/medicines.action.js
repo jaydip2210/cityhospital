@@ -1,15 +1,18 @@
 import { json } from "react-router-dom"
 import { API_URL } from "../../Utilitys/baseURL";
 import { type } from "@testing-library/user-event/dist/type";
-import { ADD_MEDICINES, DELETE_MEDICINES, GET_MEDICINES, UPDATE_MEDICINES } from "../ActionType";
+import { ADD_MEDICINES, DELETE_MEDICINES, GET_MEDICINES, LOADING_MEDICINES, UPDATE_MEDICINES } from "../ActionType";
 
 
 export const getMedicines = () => (dispatch) => {
     try{
-        fetch(API_URL + "medicines")
-        .then(response => response.json())
-        // .then(data => console.log(data));
-        .then(data => dispatch({type: GET_MEDICINES, payload: data}));
+        dispatch(loadingMedicines())
+       return setTimeout(() => {
+            fetch(API_URL + "medicines")
+            .then(response => response.json())
+            // .then(data => console.log(data));
+            .then(data => dispatch({type: GET_MEDICINES, payload: data}));
+        }, 2000);      
     } catch(error) {
         console.log(error);
     } 
@@ -58,4 +61,8 @@ export const updataMedicines = (data) => (dispatch) => {
     } catch(error) {
         console.log(error);
     }
+}
+
+export const loadingMedicines = () => (dispatch) => {
+    dispatch({type: LOADING_MEDICINES})
 }

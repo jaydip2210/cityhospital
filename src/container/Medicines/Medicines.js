@@ -1,5 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import Card from '../../components/Ui/Card/Card';
+import { useDispatch, useSelector } from 'react-redux';
+import { getMedicines } from '../../redux/action/medicines.action';
+
+import CircularProgress from '@mui/material/CircularProgress';
+
 
 const medicine = [
     {
@@ -63,6 +68,11 @@ const medicine = [
 function Medicines({increment, fav, setFav}) {
     const [mdata, setMdata] = useState([]);
 
+    const dispatch = useDispatch();
+    const medicines = useSelector(state => state.medicines)
+    console.log(medicines.medicines);
+    console.log(medicines.isLoading);
+
     // const [fav, setFav] = useState([]);
 
     // const [medicines, setMedicines] = useState(medicine);
@@ -106,10 +116,11 @@ function Medicines({increment, fav, setFav}) {
 
     ///////////////////////////////////////////////////////////////
     const getData = () => {
-        let localData = JSON.parse(localStorage.getItem("medicines"));
-        console.log(localData);
+        // let localData = JSON.parse(localStorage.getItem("medicines"));
+        // console.log(localData);
 
-        setMdata(localData);
+        // setMdata(localData);
+        dispatch(getMedicines())
     }
 
     useEffect(() => {
@@ -161,9 +172,29 @@ function Medicines({increment, fav, setFav}) {
            
         // </div>
 
+        // <div className='container'>
+        //     {
+        //         mdata.map((v) => {
+        //             return (
+        //                 <Card
+        //                     title={v.name}
+        //                     subtitle={v.price}
+        //                     btnvalue='Add To Card'
+        //                     btnClick={handleAddToCart}
+        //                     favClick={() => handleFav(v.id)}
+        //                     favStatus={fav.includes(v.id) ? true : false}
+        //                 />
+        //             )
+        //         })
+        //     }
+        // </div>
+
         <div className='container'>
+            <br></br><br></br><br></br><br></br>
+          <div className='row'>
             {
-                mdata.map((v) => {
+                medicines.isLoading ? <CircularProgress /> : //object mathi data joy to . mukavanu
+                medicines.medicines.map((v) => {
                     return (
                         <Card
                             title={v.name}
@@ -176,6 +207,7 @@ function Medicines({increment, fav, setFav}) {
                     )
                 })
             }
+           </div>
         </div>
     );
 }
