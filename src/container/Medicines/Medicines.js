@@ -194,6 +194,7 @@ function Medicines({increment, fav, setFav}) {
           <div className='row'>
             {
                 medicines.isLoading ? <CircularProgress /> : //object mathi data joy to . mukavanu
+                medicines.error ? <p>{medicines.error}</p> :
                 medicines.medicines.map((v) => {
                     return (
                         <Card
