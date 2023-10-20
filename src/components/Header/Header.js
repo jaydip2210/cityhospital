@@ -19,6 +19,22 @@ function Header({ countCart, fav }) {
             padding: '0 4px',
         },
     }));
+
+    const cart = useSelector(state => state.cart)
+    console.log(cart);
+
+    const cartCount = cart.cart.reduce((acc, v) => acc + v.qty, 0)
+    console.log(cartCount);
+
+    // let qty = 0;
+
+    // {
+    //     cart.cart.map((v) => {
+    //         qty = qty + v.qty
+    //     })
+    // }
+    // console.log(cart.cart);
+
     return (
         <div className="main-header">
             <div id="topbar" className="d-flex align-items-center fixed-top">
@@ -27,12 +43,15 @@ function Header({ countCart, fav }) {
                         <i className="bi bi-envelope" /> <a href="mailto:contact@example.com">cityhospital@example.com</a>
                         <i className="bi bi-phone" /> +91 9988776655
                     </div>
-                    <IconButton aria-label="cart">
-                        {/* <StyledBadge badgeContent={countCart} color="secondary"> */}
-                        <StyledBadge badgeContent={c1.count} color="secondary">
-                            <ShoppingCartIcon />
-                        </StyledBadge>
-                    </IconButton>
+                    <Link to="/cart">
+                        <IconButton aria-label="cart">
+                            {/* <StyledBadge badgeContent={countCart} color="secondary"> */}
+                            {/* <StyledBadge badgeContent={c1.count} color="secondary"> */}
+                            <StyledBadge badgeContent={cartCount} color="secondary">
+                                <ShoppingCartIcon />
+                            </StyledBadge>
+                        </IconButton>
+                    </Link>
                     <IconButton aria-label="cart">
                         <StyledBadge badgeContent={fav.length} color="secondary">
                             <FavoriteIcon />

@@ -17,6 +17,7 @@ import Medicines from '../container/Medicines/Medicines';
 import MedicineData from '../container/Medicines/MedicineData'
 import AppointmentMultiStep from '../container/Appointment/AppointmentMultiStep';
 import Counter from '../container/Counter/Counter';
+import Cart from "../container/Cart/Cart"
 
 function UserRoute(props) {
     const [countCart, setCountCart] = useState(0);
@@ -41,6 +42,7 @@ function UserRoute(props) {
 
                 <Route exact path='/Auth' element={<Auth />} />
                 <Route exact path='/counter' element={<Counter />} />
+                <Route exact path='/cart' element={<Cart />} />
             </Routes>
             <Footer />
         </>

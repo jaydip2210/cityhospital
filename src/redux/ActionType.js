@@ -7,3 +7,7 @@ export const ADD_MEDICINES = "ADD_MEDICINES"
 export const UPDATE_MEDICINES = "UPDATE_MEDICINES"
 export const LOADING_MEDICINES = "LOADING_MEDICINES"
 export const ERROR_MEDICINES = "ERROR_MEDICINES"
+
+export const ADD_TO_CART = "ADD_TO_CART"
+export const INC_QTY = "INC_QTY"
+export const DEC_QTY = "DEC_QTY"

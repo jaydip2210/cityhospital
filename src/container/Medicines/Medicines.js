@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getMedicines } from '../../redux/action/medicines.action';
 
 import CircularProgress from '@mui/material/CircularProgress';
+import { addToCart } from '../../redux/action/cart.action';
 
 
 const medicine = [
@@ -73,6 +74,9 @@ function Medicines({increment, fav, setFav}) {
     console.log(medicines.medicines);
     console.log(medicines.isLoading);
 
+    const cart = useSelector(state => state.cart)
+    console.log(cart);
+
     // const [fav, setFav] = useState([]);
 
     // const [medicines, setMedicines] = useState(medicine);
@@ -127,9 +131,10 @@ function Medicines({increment, fav, setFav}) {
         getData();
     }, [])
 
-    const handleAddToCart = () => {
-        console.log("hhghgh");
-        increment((prev) => prev + 1)
+    const handleAddToCart = (id) => {
+        // console.log("hhghgh");
+        // increment((prev) => prev + 1)
+        dispatch(addToCart(id))
     }
 
     const handleFav = (id) => {
@@ -201,7 +206,7 @@ function Medicines({increment, fav, setFav}) {
                             title={v.name}
                             subtitle={v.price}
                             btnvalue='Add To Card'
-                            btnClick={handleAddToCart}
+                            btnClick={() => handleAddToCart (v.id)}
                             favClick={() => handleFav(v.id)}
                             favStatus={fav.includes(v.id) ? true : false}
                         />
