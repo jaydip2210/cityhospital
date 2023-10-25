@@ -1,4 +1,4 @@
-import { ADD_TO_CART, DEC_QTY, INC_QTY } from "../ActionType"
+import { ADD_TO_CART, DEC_QTY, INC_QTY, REMOVE } from "../ActionType"
 
 export const addToCart = (id) => (dispatch) => {
     console.log(id);
@@ -13,4 +13,9 @@ export const incQty = (id) => (dispatch) => {
 export const decQty = (id) => (dispatch) => {
     console.log(id);
     dispatch({type: DEC_QTY, payload: id})
+}
+
+export const deleteCart = (id) => (dispatch) => {
+    console.log(id);
+    dispatch({type: REMOVE, payload: id})
 }

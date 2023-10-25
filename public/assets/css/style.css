@@ -1910,6 +1910,17 @@ input:focus {
   font-weight: 300;
 }
 
+.delete {
+  cursor: pointer;
+  margin-top: 23px;
+}
+
+.total {
+  margin-left: 31rem;
+  font-weight: 100;
+  font-size: 20px;
+}
+
 @media (max-width: 800px) {
   .shopping-cart {
     width: 100%;
