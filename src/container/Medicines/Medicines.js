@@ -78,53 +78,10 @@ function Medicines({increment, fav, setFav}) {
     const cart = useSelector(state => state.cart)
     console.log(cart);
 
-    // const [fav, setFav] = useState([]);
 
-    // const [medicines, setMedicines] = useState(medicine);
-    // const [search, setSearch] = useState('');
-    // const [sort, setSort] = useState('');
-
-    // let localData = JSON.parse(localStorage.getItem("medicines"));
-    // console.log(localData);
-
-    // const handalsearchSort = () => {
-    //     console.log('yyyy');
-
-    //     let localData = JSON.parse(localStorage.getItem("medicines"));
-    //     console.log(localData);
-
-    //     let Data = localData.filter((v) => {
-    //         return(
-    //             v.name.toLowerCase().includes(search.toLowerCase()) ||
-    //             v.price.toString().includes(search.toString())
-    //         )
-
-    //     })
-
-    //     Data = Data.sort((a,b) => {
-    //         if(sort === 'az'){
-    //             return a.name.localeCompare(b.name)
-    //         }else if(sort === 'za'){
-    //             return b.name.localeCompare(a.name)
-    //         }else if(sort === 'low'){
-    //             return a.price - b.price;
-    //         } else if(sort === 'high'){
-    //             return b.price - a.price;
-    //         }
-    //     })
-    //     console.log(Data);
-
-    //     return Data
-    // }
-
-    // const finalData = handalsearchSort()
-
-    ///////////////////////////////////////////////////////////////
+  
     const getData = () => {
-        // let localData = JSON.parse(localStorage.getItem("medicines"));
-        // console.log(localData);
-
-        // setMdata(localData);
+      
         dispatch(getMedicines())
     }
 
@@ -133,10 +90,8 @@ function Medicines({increment, fav, setFav}) {
     }, [])
 
     const handleAddToCart = (id) => {
-        // console.log("hhghgh");
-        // increment((prev) => prev + 1)
-        // dispatch(addToCart(id))
-        dispatch(addToCart(id))
+     
+        dispatch(addToCart({id: id, qty: 1}))
     }
 
     const handleFav = (id) => {
@@ -151,51 +106,7 @@ function Medicines({increment, fav, setFav}) {
     console.log(fav);
 
     return (
-        // <div>
-        //     <br></br>
-        //     <input placeholder='Search' onChange={(e) => setSearch(e.target.value)}></input>
-
-        //     <select onChange={(e) => setSort(e.target.value)}>
-        //         <option value='0'>--select--</option>
-        //         <option value='low'>Low price</option>
-        //         <option value='high'>high price</option>
-        //         <option value='a'>A to Z</option>
-        //         <option value='z'>Z to A</option>
-        //     </select>
-        //     {
-        //         finalData.map((v) => {
-        //             return (
-        //                 <section id="doctors" className="doctors">
-        //                     <div className="container">
-        //                         <div className="section-title">
-        //                            <h2>{v.name}</h2>
-        //                            <h3>{v.price}</h3>
-        //                         </div>
-        //                     </div>
-        //                 </section>
-        //             )
-        //         })
-        //     }         
-           
-        // </div>
-
-        // <div className='container'>
-        //     {
-        //         mdata.map((v) => {
-        //             return (
-        //                 <Card
-        //                     title={v.name}
-        //                     subtitle={v.price}
-        //                     btnvalue='Add To Card'
-        //                     btnClick={handleAddToCart}
-        //                     favClick={() => handleFav(v.id)}
-        //                     favStatus={fav.includes(v.id) ? true : false}
-        //                 />
-        //             )
-        //         })
-        //     }
-        // </div>
-
+     
         <div className='container'>
             <br></br><br></br><br></br><br></br>
           <div className='row'>

@@ -8,6 +8,7 @@ import AdminRoute from './routes/AdminRoute';
 import PrivateRoute from './routes/PrivateRoute';
 import { Provider } from 'react-redux';
 import { configureStore } from './redux/store';
+import { PersistGate } from 'redux-persist/integration/react'
 // import Home from './container/Home/Home';
 // import { Route, Routes } from 'react-router-dom';
 // import Department from './container/Department/Department';
@@ -19,7 +20,7 @@ import { configureStore } from './redux/store';
 // import Test from './components/Ui/Card/Test';
 
 function App() {
-  const store = configureStore();
+  const {store, persistor} = configureStore();
   return (
     <>
       {/* <Header /> */}
@@ -33,13 +34,15 @@ function App() {
         <Route exact path='/Auth' element={<Auth />}/>       
       </Routes> */}
       <Provider store={store}>
-        <Routes>
-          <Route path='/*' element={<UserRoute />} />
-          {/* <Route path='/admin/*' element={<AdminRoute />} /> */}
-          {/* <Route element={<PrivateRoute />}> */}
-          <Route path='/admin/*' element={<AdminRoute />} />
-          {/* </Route> */}
-        </Routes>
+        <PersistGate loading={null} persistor={persistor}>
+          <Routes>
+            <Route path='/*' element={<UserRoute />} />
+            {/* <Route path='/admin/*' element={<AdminRoute />} /> */}
+            {/* <Route element={<PrivateRoute />}> */}
+            <Route path='/admin/*' element={<AdminRoute />} />
+            {/* </Route> */}
+          </Routes>
+        </PersistGate>
       </Provider>
       {/* <Footer /> */}
       {/* <Test /> */}
