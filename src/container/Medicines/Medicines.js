@@ -4,7 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getMedicines } from '../../redux/action/medicines.action';
 
 import CircularProgress from '@mui/material/CircularProgress';
-import { addToCart } from '../../redux/action/cart.action';
+import { addToCart } from '../../redux/slice/cart.slice';
+// import { addToCart } from '../../redux/action/cart.action';
 
 
 const medicine = [
@@ -134,6 +135,7 @@ function Medicines({increment, fav, setFav}) {
     const handleAddToCart = (id) => {
         // console.log("hhghgh");
         // increment((prev) => prev + 1)
+        // dispatch(addToCart(id))
         dispatch(addToCart(id))
     }
 

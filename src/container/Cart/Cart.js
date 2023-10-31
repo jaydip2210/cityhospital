@@ -1,7 +1,10 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { decQty, deleteCart, incQty } from '../../redux/action/cart.action';
+// import { decQty, deleteCart, incQty } from '../../redux/action/cart.action';
+import { deleteCart } from '../../redux/action/cart.action';
 import DeleteIcon from '@mui/icons-material/Delete';
+import { decQty, incQty } from '../../redux/slice/cart.slice';
+
 
 function Cart(props) {
     const medicines = useSelector(state => state.medicines)
@@ -25,6 +28,7 @@ function Cart(props) {
     console.log(total);
 
     const hanleInc = (id) => {
+        // dispatch(incQty(id))
         dispatch(incQty(id))
         console.log(id);
     }
