@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import Card from '../../components/Ui/Card/Card';
 import { useDispatch, useSelector } from 'react-redux';
-import { getMedicines } from '../../redux/action/medicines.action';
+// import { getMedicines } from '../../redux/action/medicines.action';
 
 import CircularProgress from '@mui/material/CircularProgress';
 import { addToCart } from '../../redux/slice/cart.slice';
+import { getMedicines } from '../../redux/slice/medicines.slice';
 // import { addToCart } from '../../redux/action/cart.action';
 
 
@@ -81,7 +82,7 @@ function Medicines({increment, fav, setFav}) {
 
   
     const getData = () => {
-      
+        // dispatch(getMedicines())
         dispatch(getMedicines())
     }
 
