@@ -102,8 +102,8 @@ export default function Layout({children}) {
   };
 
   const Iconlist = [
-    {lable:"Medicines", icon:<MedicationIcon/>, to: "/admin/Medicines"},
-    {lable:"Doctors", icon:<LocalHospitalIcon/>, to: "/admin/Doctors"}
+    {lable:"Medicines", icon:<MedicationIcon/>, to: "/admin/medicines"},
+    {lable:"Doctors", icon:<LocalHospitalIcon/>, to: "/admin/doctors"}
 ]
 
   return (
@@ -138,6 +138,7 @@ export default function Layout({children}) {
         <List>
           {Iconlist.map((value, index) => (
             <ListItem key={index} disablePadding sx={{ display: 'block' }}
+            component={Link}
             to={value.to} >
               <ListItemButton
                 sx={{
@@ -154,6 +155,7 @@ export default function Layout({children}) {
                   }}
                 >
                   {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                  {/* {value.icon} */}
                 </ListItemIcon>
                 <ListItemText primary={value.lable} sx={{ opacity: open ? 1 : 0 }} />
               </ListItemButton>
