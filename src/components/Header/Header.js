@@ -10,6 +10,8 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import { useSelector } from 'react-redux';
 import ThemeContext from '../../context/theme.context';
 
+import DarkModeIcon from '@mui/icons-material/DarkMode';
+
 function Header({ countCart, fav }) {
     const theme = useContext(ThemeContext);
     console.log(theme);
@@ -47,19 +49,23 @@ function Header({ countCart, fav }) {
                         <i className="bi bi-envelope" /> <a href="mailto:contact@example.com">cityhospital@example.com</a>
                         <i className="bi bi-phone" /> +91 9988776655
                     </div>
-                    <button onClick={() => theme.toggleTheme(theme.theme)}>Change Theme</button>
+
+                    <IconButton aria-label="cart">
+                        <DarkModeIcon onClick={() => theme.toggleTheme(theme.theme)} sx={{ color: theme.theme === 'light' ? 'gray' : 'white' }}>Change Theme</DarkModeIcon>
+                    </IconButton>
+
                     <Link to="/cart">
                         <IconButton aria-label="cart">
                             {/* <StyledBadge badgeContent={countCart} color="secondary"> */}
                             {/* <StyledBadge badgeContent={c1.count} color="secondary"> */}
                             <StyledBadge badgeContent={cartCount} color="secondary">
-                                <ShoppingCartIcon sx={{color: theme.theme === 'light' ? 'gray' : 'white'}}/>
+                                <ShoppingCartIcon sx={{ color: theme.theme === 'light' ? 'gray' : 'white' }} />
                             </StyledBadge>
                         </IconButton>
                     </Link>
                     <IconButton aria-label="cart">
                         <StyledBadge badgeContent={fav.length} color="secondary">
-                            <FavoriteIcon sx={{color: theme.theme === 'light' ? 'gray' : 'white'}}/>
+                            <FavoriteIcon sx={{ color: theme.theme === 'light' ? 'gray' : 'white' }} />
                         </StyledBadge>
                     </IconButton>
                     <div className="d-none d-lg-flex social-links align-items-center">
