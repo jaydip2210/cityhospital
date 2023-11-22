@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import '../App.css';
 import Home from '../container/Home/Home';
 import { Route, Routes } from 'react-router-dom';
@@ -18,12 +18,16 @@ import MedicineData from '../container/Medicines/MedicineData'
 import AppointmentMultiStep from '../container/Appointment/AppointmentMultiStep';
 import Counter from '../container/Counter/Counter';
 import Cart from "../container/Cart/Cart"
+import ThemeContext from '../context/theme.context';
 
 function UserRoute(props) {
     const [countCart, setCountCart] = useState(0);
     const [fav, setFav] = useState([]);
+    const theme = useContext(ThemeContext);
+    console.log(theme);
+
     return (
-        <>
+        <div className={`${theme.theme}`}>
             <Header countCart={countCart} fav={fav} />
             <Routes>
                 <Route exact path='/' element={<Home />} />
@@ -45,7 +49,7 @@ function UserRoute(props) {
                 <Route exact path='/cart' element={<Cart />} />
             </Routes>
             <Footer />
-        </>
+        </div>
     );
 }
 

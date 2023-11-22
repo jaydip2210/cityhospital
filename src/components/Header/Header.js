@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { HeadHeading, HeadHeading2 } from '../Ui/Heading/Heading';
 
@@ -8,8 +8,12 @@ import IconButton from '@mui/material/IconButton';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import { useSelector } from 'react-redux';
+import ThemeContext from '../../context/theme.context';
 
 function Header({ countCart, fav }) {
+    const theme = useContext(ThemeContext);
+    console.log(theme);
+
     const c1 = useSelector(state => state.counter)
     const StyledBadge = styled(Badge)(({ theme }) => ({
         '& .MuiBadge-badge': {
@@ -36,25 +40,26 @@ function Header({ countCart, fav }) {
     // console.log(cart.cart);
 
     return (
-        <div className="main-header">
-            <div id="topbar" className="d-flex align-items-center fixed-top">
+        <div className={`main-header ${theme.theme}`}>
+            <div id="topbar" className={`d-flex align-items-center fixed-top ${theme.theme}`}>
                 <div className="container d-flex justify-content-between">
                     <div className="contact-info d-flex align-items-center">
                         <i className="bi bi-envelope" /> <a href="mailto:contact@example.com">cityhospital@example.com</a>
                         <i className="bi bi-phone" /> +91 9988776655
                     </div>
+                    <button onClick={() => theme.toggleTheme(theme.theme)}>Change Theme</button>
                     <Link to="/cart">
                         <IconButton aria-label="cart">
                             {/* <StyledBadge badgeContent={countCart} color="secondary"> */}
                             {/* <StyledBadge badgeContent={c1.count} color="secondary"> */}
                             <StyledBadge badgeContent={cartCount} color="secondary">
-                                <ShoppingCartIcon />
+                                <ShoppingCartIcon sx={{color: theme.theme === 'light' ? 'gray' : 'white'}}/>
                             </StyledBadge>
                         </IconButton>
                     </Link>
                     <IconButton aria-label="cart">
                         <StyledBadge badgeContent={fav.length} color="secondary">
-                            <FavoriteIcon />
+                            <FavoriteIcon sx={{color: theme.theme === 'light' ? 'gray' : 'white'}}/>
                         </StyledBadge>
                     </IconButton>
                     <div className="d-none d-lg-flex social-links align-items-center">
