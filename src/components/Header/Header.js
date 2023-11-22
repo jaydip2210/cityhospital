@@ -12,10 +12,14 @@ import ThemeContext from '../../context/theme.context';
 
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import LightModeIcon from '@mui/icons-material/LightMode';
+import LanguageContext from '../../context/language.context';
 
 function Header({ countCart, fav }) {
     const theme = useContext(ThemeContext);
     console.log(theme);
+
+    const language = useContext(LanguageContext);
+    console.log(language);
 
     const c1 = useSelector(state => state.counter)
     const StyledBadge = styled(Badge)(({ theme }) => ({
@@ -115,6 +119,14 @@ function Header({ countCart, fav }) {
                     <NavLink to="/Auth" className="appointment-btn scrollto">
                         <span className="d-none d-md-inline">Login/ Signup</span>
                     </NavLink>
+
+                    <select onChange={() => language.toggleLanguage(language.language)}>
+                        <option value='0'>--Select--</option>
+                        <option value='english'>english</option>
+                        <option value='hindi'>hindi</option>
+                        <option value='gujarati'>gujarati</option>
+                    </select>
+
                 </div>
             </header>
         </div>

@@ -10,6 +10,7 @@ import { Provider } from 'react-redux';
 import { configureStore } from './redux/store';
 import { PersistGate } from 'redux-persist/integration/react'
 import { ThemeProvider } from './context/theme.context';
+import { LanguageProvider } from './context/language.context';
 // import Home from './container/Home/Home';
 // import { Route, Routes } from 'react-router-dom';
 // import Department from './container/Department/Department';
@@ -35,17 +36,19 @@ function App() {
         <Route exact path='/Auth' element={<Auth />}/>       
       </Routes> */}
       <ThemeProvider>
-        <Provider store={store}>
-          <PersistGate loading={null} persistor={persistor}>
-            <Routes>
-              <Route path='/*' element={<UserRoute />} />
-              {/* <Route path='/admin/*' element={<AdminRoute />} /> */}
-              {/* <Route element={<PrivateRoute />}> */}
-              <Route path='/admin/*' element={<AdminRoute />} />
-              {/* </Route> */}
-            </Routes>
-          </PersistGate>
-        </Provider>
+        <LanguageProvider>
+          <Provider store={store}>
+            <PersistGate loading={null} persistor={persistor}>
+              <Routes>
+                <Route path='/*' element={<UserRoute />} />
+                {/* <Route path='/admin/*' element={<AdminRoute />} /> */}
+                {/* <Route element={<PrivateRoute />}> */}
+                <Route path='/admin/*' element={<AdminRoute />} />
+                {/* </Route> */}
+              </Routes>
+            </PersistGate>
+          </Provider>
+        </LanguageProvider>
       </ThemeProvider>
       {/* <Footer /> */}
       {/* <Test /> */}
