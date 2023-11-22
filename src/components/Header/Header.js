@@ -11,6 +11,7 @@ import { useSelector } from 'react-redux';
 import ThemeContext from '../../context/theme.context';
 
 import DarkModeIcon from '@mui/icons-material/DarkMode';
+import LightModeIcon from '@mui/icons-material/LightMode';
 
 function Header({ countCart, fav }) {
     const theme = useContext(ThemeContext);
@@ -50,8 +51,13 @@ function Header({ countCart, fav }) {
                         <i className="bi bi-phone" /> +91 9988776655
                     </div>
 
-                    <IconButton aria-label="cart">
-                        <DarkModeIcon onClick={() => theme.toggleTheme(theme.theme)} sx={{ color: theme.theme === 'light' ? 'gray' : 'white' }}>Change Theme</DarkModeIcon>
+                    
+                    <IconButton sx={{ color: theme.theme === 'light' ? 'gray' : 'white' }}>
+                    {
+                        theme.theme === 'light' ?
+                            <DarkModeIcon onClick={() => theme.toggleTheme(theme.theme)}>Change Theme</DarkModeIcon> :
+                            <LightModeIcon onClick={() => theme.toggleTheme(theme.theme)}>Change Theme</LightModeIcon>
+                    }
                     </IconButton>
 
                     <Link to="/cart">
