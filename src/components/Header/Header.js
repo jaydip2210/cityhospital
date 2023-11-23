@@ -120,11 +120,11 @@ function Header({ countCart, fav }) {
                         <span className="d-none d-md-inline">Login/ Signup</span>
                     </NavLink>
 
-                    <select onChange={() => language.toggleLanguage(language.language)}>
+                    <select onChange={(event) => language.toggleLanguage(event.target.value)}>
                         <option value='0'>--Select--</option>
-                        <option value='english'>english</option>
-                        <option value='hindi'>hindi</option>
-                        <option value='gujarati'>gujarati</option>
+                        <option value='english'>English</option>
+                        <option value='hindi'>Hindi</option>
+                        <option value='gujarati'>Gujarati</option>
                     </select>
 
                 </div>
