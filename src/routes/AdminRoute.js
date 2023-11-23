@@ -4,7 +4,7 @@ import Medicines from '../admin/container/Medicines/Medicines';
 import Doctors from '../admin/container/Doctors/Doctors'
 import Layout from '../admin/component/Layout/Layout'
 import PrivateRoute from './PrivateRoute';
-import Todo from '../admin/container/Test/TodoList';
+import Todo from '../admin/container/Todo/TodoList';
 
 function AdminRoute(props) {
     return (
@@ -13,7 +13,7 @@ function AdminRoute(props) {
                 <Routes element={<PrivateRoute />}>
                     <Route exact path='/medicines' element={<Medicines />} />
                     <Route exact path='/doctors' element={<Doctors /> } />
-                    <Route exact path='/test' element={<Todo />} />
+                    <Route exact path='/todo' element={<Todo />} />
                 </Routes>
             </Layout>
         </div>

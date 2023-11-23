@@ -1,5 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
-import { deteleMedicinesData, getMedicinesData } from "../../common/api/medicines.api"
+import { addMedicinesData, deteleMedicinesData, getMedicinesData, updateMedicinesData } from "../../common/api/medicines.api"
+import { collection, addDoc } from "firebase/firestore"; 
+import { db } from "../../firebase";
 
 const initialState = {
     isLoading: false,
@@ -38,13 +40,38 @@ export const deleteMedicines = createAsyncThunk(  //create AysncThunk search
     }
 )
 
+export const addMedicines = createAsyncThunk(  
+    'medicines/post',
+    async (data) => {
+        // await addMedicinesData(data);
+
+        // return data;
+        try {
+            const docRef = await addDoc(collection(db, "medicines"), {
+                data: data
+            });
+            console.log("Document written with ID: ", docRef.id);
+          } catch (e) {
+            console.error("Error adding document: ", e);
+          }
+    }
+)
+
+export const updateMedicines = createAsyncThunk(  
+    'medicines/put',
+    async (data) => {
+        await updateMedicinesData(data);
+
+        return data;
+    }
+)
 
 export const medicinesSlice = createSlice({
     name: 'medicines',
     initialState: initialState,
     reducers: {},
     extraReducers: (builder) => {
-        builder.addCase(getMedicines.pending, onLoading);
+        builder.addCase(getMedicines.pending, onLoading)
         builder.addCase(getMedicines.fulfilled, (state, action) => {
             console.log(action);
             state.isLoading = false;

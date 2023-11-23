@@ -12,5 +12,5 @@ export const rootReducer = combineReducers({
    // medicines: medicinesReducer,
    medicines: medicinesReducer,
    // cart: cartReducer
-   cart: cartReducer
+   cart: cartReducer,
 })

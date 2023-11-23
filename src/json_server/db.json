@@ -20,13 +20,6 @@
       "price": 85,
       "expiry": 2023,
       "desc": "Aripiprazole is used to treat certain mental/mood disorders (such as bipolar disorder, schizophrenia, Tourette's syndrome, and irritability associated with autistic disorder). It may also be used in combination with other medication to treat depression. Aripiprazole is known as an antipsychotic drug (atypical type)."
-    },
-    {
-      "id": 8,
-      "name": "Orlistat",
-      "price": 85,
-      "expiry": 2023,
-      "desc": "Orlistat, sold under the brand name Xenical among others, is a medication used to treat obesity. Its primary function is preventing the absorption of fats from the human diet by acting as a lipase inhibitor, thereby reducing caloric intake."
     }
   ]
 }
