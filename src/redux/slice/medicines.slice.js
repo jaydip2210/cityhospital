@@ -1,8 +1,14 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
 import { addMedicinesData, deteleMedicinesData, getMedicinesData, updateMedicinesData } from "../../common/api/medicines.api"
+<<<<<<< HEAD
 import { collection, addDoc, getDocs, doc, deleteDoc, updateDoc } from "firebase/firestore";
 import { db } from "../../firebase";
 import { ADD_MEDICINES } from "../ActionType";
+=======
+import { db } from "../../firebase"
+import { collection, addDoc } from "firebase/firestore"; 
+
+>>>>>>> 23464dfe707c244840a35b7c0fcf6e6375f66c29
 
 const initialState = {
     isLoading: false,
@@ -61,11 +67,22 @@ export const addMedicines = createAsyncThunk(
         console.log("hello", data);
         // return data;
         try {
+<<<<<<< HEAD
             const docRef = await addDoc(collection(db, "medicines"), data);
             return { ...data, id: docRef.id }
         } catch (e) {
             console.error("Error adding document: ", e);
         }
+=======
+            const docRef = await addDoc(collection(db, "medicines"), {
+              data
+            });
+            console.log("Document written with ID: ", docRef.id);
+          } catch (e) {
+            console.error("Error adding document: ", e);
+          }          
+          
+>>>>>>> 23464dfe707c244840a35b7c0fcf6e6375f66c29
     }
 )
 
