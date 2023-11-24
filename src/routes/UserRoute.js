@@ -45,8 +45,8 @@ function UserRoute(props) {
                     <Route exact path='/Contact' element={<Contact />} />
                     <Route exact path='/review-details/:id' element={<ReviewDetails />} />
                     {/* <Route element={<PrivateRoute />}> */}
-                    {/* <Route exact path='/Appointment' element={<Appointment />} /> */}
-                    <Route exact path='/Appointment' element={<AppointmentMultiStep />} />
+                    <Route exact path='/Appointment' element={<Appointment />} />
+                    {/* <Route exact path='/Appointment' element={<AppointmentMultiStep />} /> */}
                     {/* </Route> */}
 
                     <Route exact path='/Auth' element={<Auth />} />

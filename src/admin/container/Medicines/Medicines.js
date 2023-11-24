@@ -5,9 +5,9 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import { DataGrid } from '@mui/x-data-grid';
 import MedicineFrom from './MedicineFrom';
 // import { addMedicines, deleteMedicines, getMedicines, updataMedicines } from '../../../redux/action/medicines.action';
-import { addMedicines, updataMedicines } from '../../../redux/action/medicines.action';
+// import { updataMedicines } from '../../../redux/action/medicines.action';
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteMedicines, getMedicines } from '../../../redux/slice/medicines.slice';
+import { deleteMedicines, getMedicines, addMedicines, updateMedicines } from '../../../redux/slice/medicines.slice';
 
 function Medicines(props) {
     const [mData, setMData] = useState([]);
@@ -60,7 +60,7 @@ function Medicines(props) {
         // dispatch(addMedicines(data)); //add
 
         if (updte) {
-            dispatch(updataMedicines(data));
+            dispatch(updateMedicines(data));
         } else {
             dispatch(addMedicines(data));
         }
